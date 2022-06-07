@@ -1,8 +1,8 @@
 Parameters:
-  myVPC:
+  savyVPC:
       Description: VPC used to deploy our resources below
       Type: AWS::EC2::VPC::Id
-  PublicSubnet:
+  SavyPublicSubnet:
       Description: Subnet to be used for our Web Server
       Type: AWS::EC2::Subnet::Id
   AMItoUse:
@@ -14,7 +14,7 @@ Resources:
     Properties:
         GroupDescription: Allow http to our test host
         VpcId:
-          Ref: myVPC
+          Ref: savyVPC
         SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -25,7 +25,7 @@ Resources:
           FromPort: -1
           ToPort: -1
           CidrIp: 0.0.0.0/0
-  myWebServerInstance: 
+  mySavyInstance: 
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
@@ -36,7 +36,7 @@ Resources:
           GroupSet: 
             - Ref: "myWebAccessSecurityGroup"
           SubnetId: 
-            Ref: "PublicSubnet"
+            Ref: "SavyPublicSubnet"
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash

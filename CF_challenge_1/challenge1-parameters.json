@@ -1,14 +1,14 @@
 [
     {
-        "ParameterKey": "myVPC",
+        "ParameterKey": "savyVPC",
         "ParameterValue": "vpc-0a7ed47124ee193c8"
       },
       {
-        "ParameterKey": "PublicSubnet",
+        "ParameterKey": "SavyPublicSubnet",
         "ParameterValue": "subnet-08158902f93563d30"
       },
       {
         "ParameterKey": "AMItoUse",
-        "ParameterValue": "ami-0e449176cecc3e577"
+        "ParameterValue": "ami-0022f774911c1d690"
       }
 ]
